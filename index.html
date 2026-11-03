@@ -4,7 +4,39 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Ebook Vault – ৯৯+ বাংলা ই-বুক কম্বো মাত্র ৳৫৯</title>
-<meta name="description" content="৯৯+ ই-বুকের কম্বো বান্ডেল মাত্র ৫৯ টাকায়। বিকাশ/নগদে পেমেন্ট করে ইমেইলে পেয়ে যান।">
+<meta name="description" content="৯৯+ বাংলা ই-বুকের কম্বো বান্ডেল মাত্র ৫৯ টাকায়। প্রোগ্রামিং, ব্যবসা, সেলফ ডেভেলপমেন্ট, স্পোকেন ইংলিশ। বিকাশ/নগদে পেমেন্ট করে ইমেইলে পিডিএফ বই পান।">
+<meta name="keywords" content="বাংলা ই-বুক, পিডিএফ বই, ebook bangla, ই-বুক কম্বো, ebook vault, বই কিনুন, বাংলা পিডিএফ বই">
+<meta name="robots" content="index, follow">
+<meta name="theme-color" content="#06140d">
+<link rel="canonical" href="https://minideveloper41-gif.github.io/ebook-vault/">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%93%9A%3C/text%3E%3C/svg%3E">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="bn_BD">
+<meta property="og:site_name" content="Ebook Vault">
+<meta property="og:title" content="৯৯+ বাংলা ই-বুক কম্বো বান্ডেল – মাত্র ৳৫৯">
+<meta property="og:description" content="প্রোগ্রামিং, ব্যবসা, সেলফ ডেভেলপমেন্ট, স্পোকেন ইংলিশসহ ৯৯+ পিডিএফ বই এক প্যাকে। বিকাশ/নগদে পেমেন্ট, ইমেইলে ডেলিভারি।">
+<meta property="og:url" content="https://minideveloper41-gif.github.io/ebook-vault/">
+<meta property="og:image" content="https://minideveloper41-gif.github.io/ebook-vault/og-image.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="৯৯+ বাংলা ই-বুক কম্বো বান্ডেল – মাত্র ৳৫৯">
+<meta name="twitter:image" content="https://minideveloper41-gif.github.io/ebook-vault/og-image.jpg">
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"Product",
+  "name":"৯৯+ ই-বুক কম্বো বান্ডেল",
+  "description":"প্রোগ্রামিং, ব্যবসা, সেলফ ডেভেলপমেন্ট ও স্পোকেন ইংলিশসহ ৯৯+ পিডিএফ ই-বুকের কম্বো প্যাক।",
+  "image":"https://minideveloper41-gif.github.io/ebook-vault/og-image.jpg",
+  "brand":{"@type":"Brand","name":"Ebook Vault"},
+  "offers":{
+    "@type":"Offer",
+    "url":"https://minideveloper41-gif.github.io/ebook-vault/",
+    "priceCurrency":"BDT",
+    "price":"59",
+    "availability":"https://schema.org/InStock"
+  }
+}
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Anek+Bangla:wght@700;800&display=swap" rel="stylesheet">
@@ -273,7 +305,7 @@ document.querySelectorAll('.copy').forEach(function(b){
 });
 
 // order submit -> email via FormSubmit
-var EMAIL = 'minideveloper41@gmail.com';
+var SCRIPT_URL = 'এখানে_Apps_Script_Web_App_URL_বসান';
 var WA = '8801941961084';
 var form = document.getElementById('orderForm');
 var msg = document.getElementById('msg');
@@ -309,16 +341,14 @@ form.addEventListener('submit', function(e){
     'প্রোডাক্ট': '99+ E-Books Combo Bundle',
     'অর্ডারের সময়': new Date().toLocaleString('en-GB',{timeZone:'Asia/Dhaka'})
   };
-  fetch('https://formsubmit.co/ajax/' + EMAIL, {
-    method:'POST',
-    headers:{'Content-Type':'application/json','Accept':'application/json'},
-    body: JSON.stringify(payload)
-  }).then(function(r){ return r.json(); }).then(function(j){
-    if (j && (j.success === 'true' || j.success === true)) {
-      var text = 'নতুন অর্ডার\nনাম: '+name+'\nইমেইল: '+email+'\nফোন: '+phone+'\n'+method+' TrxID: '+trx;
-      show('ok','<b>অর্ডার পাওয়া গেছে!</b> পেমেন্ট যাচাই করে আপনার ইমেইলে বই পাঠানো হবে। দ্রুত পেতে <a target="_blank" rel="noopener" href="https://wa.me/'+WA+'?text='+encodeURIComponent(text)+'">হোয়াটসঅ্যাপে অর্ডারের তথ্য পাঠান</a>।');
-      form.reset();
-    } else { throw new Error('fail'); }
+  fetch(SCRIPT_URL, {
+    method:'POST', mode:'no-cors',
+    headers:{'Content-Type':'text/plain;charset=utf-8'},
+    body: JSON.stringify({name:name,email:email,phone:phone,method:method,sender:sender,trxid:trx})
+  }).then(function(){
+    var text = 'নতুন অর্ডার\nনাম: '+name+'\nইমেইল: '+email+'\nফোন: '+phone+'\n'+method+' TrxID: '+trx;
+    show('ok','<b>অর্ডার পাওয়া গেছে!</b> পেমেন্ট যাচাই হলেই আপনার ইমেইলে ডাউনলোড লিংক চলে যাবে। দ্রুত পেতে <a target="_blank" rel="noopener" href="https://wa.me/'+WA+'?text='+encodeURIComponent(text)+'">হোয়াটসঅ্যাপে অর্ডারের তথ্য পাঠান</a>।');
+    form.reset();
   }).catch(function(){
     var text = 'অর্ডার\nনাম: '+name+'\nইমেইল: '+email+'\nফোন: '+phone+'\n'+method+' ('+sender+')\nTrxID: '+trx;
     show('err','অর্ডার সাবমিট হয়নি। অনুগ্রহ করে <a target="_blank" rel="noopener" href="https://wa.me/'+WA+'?text='+encodeURIComponent(text)+'">হোয়াটসঅ্যাপে তথ্য পাঠান</a>।');
