@@ -2,7 +2,7 @@
 // Google Sheet এর Extensions > Apps Script এ পেস্ট করুন।
 
 const OWNER_EMAIL   = 'minideveloper41@gmail.com';
-const DELIVERY_LINK = 'এখানে_আপনার_ডাউনলোড_লিংক_বসান'; // শুধু যে বইগুলো বিক্রির অধিকার আপনার আছে সেগুলোর ফোল্ডার লিংক
+const DELIVERY_LINK = 'https://drive.google.com/drive/folders/1KGnF6Ob_ngI5w-bTKjdjOUgrhis5VJoC'; // শুধু যে বইগুলো বিক্রির অধিকার আপনার আছে সেগুলোর ফোল্ডার লিংক
 const STORE_NAME    = 'Ebook Vault';
 const SUPPORT_WA    = '01941961084';
 
